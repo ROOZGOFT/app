@@ -1,6 +1,8 @@
 import { route } from 'quasar/wrappers'
 import { createRouter, createMemoryHistory, createWebHistory, createWebHashHistory } from 'vue-router'
 import routes from './routes'
+import { Cookies } from 'quasar'
+import { api } from 'src/boot/axios'
 
 /*
  * If not building with SSR mode, you can
@@ -25,6 +27,41 @@ export default route(function (/* { store, ssrContext } */) {
     // quasar.conf.js -> build -> publicPath
     history: createHistory(process.env.VUE_ROUTER_BASE)
   })
+
+  Router.beforeEach( (to ,from , next)=>{
+    let access_token_exist = false;
+    if(Cookies.get('access_token')){
+      access_token_exist = true;
+      api.defaults.headers = {
+        Authorization : "Bearer" + Cookies.get('access_token'),
+        "Content-Type":"application/json",
+        Accept:"application/json;charset=utf-8"
+      }
+    }
+    if(to.matched.some((record)=>record.meta.requireAuth)){
+      if(access_token_exist){
+        next();
+      }else{
+        next({
+          path:'/intro/first',
+          query:{redirect:to.fullPath}
+        })
+      }
+    }else{
+      if(to.matched.some((record)=> record.meta.login || to.matched.some((record)=>record.meta.register))){
+        if(access_token_exist){
+          next({
+            path:'/',
+            query: to.fullPath
+          })
+        }else{
+          next()
+        }
+      }else{
+      next()
+    }
+  }
+  } )
 
   return Router
 })
