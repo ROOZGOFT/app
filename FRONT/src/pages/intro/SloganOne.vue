@@ -5,8 +5,8 @@
       <div :class="['col-12', 'fullscreen']" style="display: flex;flex-direction: column; justify-content: center;">
         <q-btn class="absolute-top-right z-10" flat label="رد کردن" style="color: gray;margin: 7px 7px 0;" />
 
-        <div>
-          <h2  :class="[{'text-h4':$q.screen.height > 800},{'text-h5':$q.screen.height <800} , 'text-weight-medium' , 'q-mt-none']">
+        <div>     
+          <h2 :class="[{'text-h4':$q.screen.height > 800},{'text-h5':$q.screen.height <800} , 'text-weight-medium' , 'q-mt-none']">
             ! به روز گفت خوش آمدید
           </h2>
           <p class="text-body2 q-px-md ligatures text-grey">

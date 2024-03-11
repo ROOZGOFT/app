@@ -22,6 +22,14 @@ const routes = [
       
     ]
   },
+  {
+    path:'/auth',
+    component: ()=> import('layouts/IntroLayout.vue'),
+    children:[
+      {path:'' , component:()=>import ("pages/auth/AuthPage.vue")},
+      {path:'confirm' , component:()=>import ("pages/auth/ConfirmAuth.vue")}
+    ]
+  },
 
   // Always leave this as last one,
   // but you can also remove it
