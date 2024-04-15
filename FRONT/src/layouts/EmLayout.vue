@@ -18,10 +18,6 @@ export default defineComponent({
 </script>
 
 <style>
-body {
-  background-color: #000e1a;
-}
-
 .slide-fade-enter-active {
   transition: all 0.1s ease;
 }

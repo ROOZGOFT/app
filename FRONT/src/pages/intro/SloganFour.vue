@@ -29,15 +29,14 @@
         </p>
 
         <section class="absolute-bottom" style="bottom: 30px;">
-          <div style="display: flex; justify-content: center;">
-            <div style="width: 7px;height: 7px; border-radius: 50%; background-color: white;"></div>
-            <div style="width: 7px;height: 7px; border-radius: 50%; margin: 0px 7px ; background-color: gray;">
-            </div>
+          <div class="row justify-center q-gutter-x-sm">
+            <div style="width: 7px;height: 7px; border-radius: 50%;  background-color: gray;"> </div>
             <div style="width: 7px;height: 7px; border-radius: 50%; background-color: gray;"></div>
-            <div style="width: 7px;height: 7px; border-radius: 50%; margin-left: 7px; background-color: gray;"></div>
+            <div style="width: 7px;height: 7px; border-radius: 50%;  background-color: gray;"></div>
+            <div style="width: 7px;height: 7px; border-radius: 50%; background-color: white;"></div>
           </div>
           <div style="text-align: center;">
-            <q-btn flat @click="$router.push('/login')" label="بزن بریم"
+            <q-btn flat @click="$router.push('/auth')" label="بزن بریم"
               style="background-color: #1BA4FF; color: white;width: 80%;height: 50px;border-radius: 16px;font-size: 16px;font-weight:300;margin-top: 7px;" />
           </div>
         </section>

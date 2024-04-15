@@ -43,19 +43,19 @@ export default route(function (/* { store, ssrContext } */) {
         next();
       }else{
         next({
-          path:'/intro/first',
+          path:'/intro',
           query:{redirect:to.fullPath}
         })
       }
     }else{
       if(to.matched.some((record)=> record.meta.login || to.matched.some((record)=>record.meta.register))){
         if(access_token_exist){
-          next({
-            path:'/',
-            query: to.fullPath
-          })
-        }else{
           next()
+        }else{
+          next({
+            path:'/intro',
+            query:{redirect: to.fullPath}
+          })
         }
       }else{
       next()

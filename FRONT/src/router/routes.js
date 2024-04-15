@@ -3,8 +3,12 @@ const routes = [
   {
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
+    meta:{
+      requireAuth:true
+    },
     children: [
-      { path: '', component: () => import('pages/IndexPage.vue'), meta:{ requireAuth:true } }
+      { path: '', component: () => import('pages/dashboard-page.vue'), meta:{ requireAuth:true } },
+      { path: '/direct', component: () => import('pages/direct-page.vue'), meta:{ requireAuth:true } }
     ]
   },
 
@@ -12,7 +16,8 @@ const routes = [
     path: '/intro',
     component: ()=> import('layouts/IntroLayout.vue'),
     meta:{
-      requireAuth:false
+      requireAuth:false,
+      transition: 'slide-left'
     },
     children:[
       { path:'', component:()=> import('pages/intro/SloganOne.vue') },
@@ -25,9 +30,12 @@ const routes = [
   {
     path:'/auth',
     component: ()=> import('layouts/IntroLayout.vue'),
+    meta:{
+      requireAuth:false
+    },
     children:[
-      {path:'' , component:()=>import ("pages/auth/AuthPage.vue")},
-      {path:'confirm' , component:()=>import ("pages/auth/ConfirmAuth.vue")}
+      {path:'' , component:()=>import ("pages/auth/auth-page.vue")},
+      {path:'confirm' , component:()=>import ("pages/auth/confirm-page.vue")}
     ]
   },
 

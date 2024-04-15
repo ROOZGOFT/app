@@ -28,12 +28,11 @@
           </p>
 
         <section class="absolute-bottom" style="bottom: 30px;">
-          <div style="display: flex; justify-content: center;">
+          <div class="row justify-center q-gutter-x-sm">
+            <div style="width: 7px;height: 7px; border-radius: 50%;  background-color: gray;"></div>
             <div style="width: 7px;height: 7px; border-radius: 50%; background-color: white;"></div>
-            <div style="width: 7px;height: 7px; border-radius: 50%; margin: 0px 7px ; background-color: gray;">
-            </div>
             <div style="width: 7px;height: 7px; border-radius: 50%; background-color: gray;"></div>
-            <div style="width: 7px;height: 7px; border-radius: 50%; margin-left: 7px; background-color: gray;"></div>
+            <div style="width: 7px;height: 7px; border-radius: 50%;  background-color: gray;"></div>
           </div>
           <div style="text-align: center;">
             <q-btn flat @click="$router.push('/intro/slogan3')" label="بزن بریم"

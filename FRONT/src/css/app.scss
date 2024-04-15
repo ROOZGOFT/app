@@ -124,6 +124,35 @@ $animationSpeed: 40s;
 
   .slide {
     height: 60px;
-    width:60px;
+    width: 60px;
   }
 }
+
+Dark Mode
+body.body--dark {
+  background-color: $background-dark;
+}
+.body--dark p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $text-dark;
+}
+
+// Light Mode
+body.body--light {
+  background-color: $background-light;
+}
+
+// .body--light p,
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6{
+//   color: $text-light;
+// }
