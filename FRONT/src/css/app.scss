@@ -128,7 +128,7 @@ $animationSpeed: 40s;
   }
 }
 
-Dark Mode
+// Dark Mode
 body.body--dark {
   background-color: $background-dark;
 }
@@ -140,6 +140,14 @@ h4,
 h5,
 h6 {
   color: $text-dark;
+}
+
+.body--dark .footer {
+  background-color: $case-dark;
+}
+.body--dark .recommend-one,
+.body--dark .recommend-two {
+  background-color: $case-dark;
 }
 
 // Light Mode

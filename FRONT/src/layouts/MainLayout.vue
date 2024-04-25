@@ -1,7 +1,7 @@
 <template>
   <q-layout view="hHh lpR fFf">
 
-    <q-header  class=" bg-transparent">
+    <q-header class=" bg-transparent">
       <q-toolbar style="display: flex;justify-content: space-between; align-items: center;">
 
         <q-btn outline icon="inbox" @click="$router.push('/direct')" />
@@ -24,8 +24,8 @@
       <router-view />
     </q-page-container>
 
-    <q-footer elevated class="bg-grey-8 text-white">
-      <q-toolbar style="display: flex;justify-content: space-between;align-items: center;">
+    <q-footer  class="bg-grey-8 text-white">
+      <q-toolbar class="footer" style="display: flex;justify-content: space-between;align-items: center;">
 
         <q-btn flat>
           <q-avatar>
